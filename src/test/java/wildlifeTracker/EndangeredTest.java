@@ -1,4 +1,6 @@
 package wildlifeTracker;
+import org.sql2o.*;
+import java.util.List;
 
-public class EndangeredTest {
+public class EndangeredTest extends AnimalsTest{
 }
