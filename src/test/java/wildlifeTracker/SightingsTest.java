@@ -28,8 +28,19 @@ public class SightingsTest {
         Sightings testSighting = new Sightings("area 1", "Vick", 1);
         assertEquals(1, testSighting.getAnimalId());
     }
-    public void getLocation_instantiatesWithId_int() {
+    @Test
+    public void save_savesSightingsObjectsIntoDatabase(){
         Sightings testSighting = new Sightings("area 1", "Vick", 1);
-        assertEquals(1, testSighting.getId());
+        testSighting.save();
+        assertTrue(Sightings.all().get(0).equals(testSighting));
+    }
+    @Test
+    public void all_returnsAllObjectsOfSightingsClass_true(){
+        Sightings firstSighting = new Sightings("area 1", "Vick",1);
+        firstSighting.save();
+        Sightings secondSighting = new Sightings("area 1", "Vick",1);
+        secondSighting.save();
+        assertEquals(true, Sightings.all().get(0).equals(firstSighting));
+        assertEquals(true, Sightings.all().get(1).equals(secondSighting));
     }
 }

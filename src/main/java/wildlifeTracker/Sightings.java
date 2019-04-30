@@ -1,18 +1,20 @@
 package wildlifeTracker;
-
+import org.sql2o.*;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.List;
 
-public class Sightings {
+public class Sightings extends Animals{
     private String location;
     private String rangerName;
     private Timestamp spotted;
     private int animalId;
     private int id;
 
-    public Sightings(String location, String ranger_name, int animal_id) {
+    public Sightings(String location, String rangerName, int animalId) {
         this.location = location;
-        this.rangerName = ranger_name;
-        this.animalId = animal_id;
+        this.rangerName = rangerName;
+        this.animalId = animalId;
     }
 
     public String getLocation() {
@@ -33,5 +35,41 @@ public class Sightings {
 
     public int getId() {
         return id;
+    }
+
+    public String getFormattedDate() {
+        return DateFormat.getDateTimeInstance().format(spotted);
+    }
+
+    @Override
+    public boolean equals(Object anotherSighting){
+        if(!(anotherSighting instanceof Sightings)){
+            return false;
+        }
+        else{
+            Sightings newSighting = (Sightings) anotherSighting;
+            return this.getId() == newSighting.getId() &&
+                    this.getLocation().equals(newSighting.getLocation()) &&
+                    this.getRangerName().equals(newSighting.getRangerName());
+        }
+    }
+    @Override
+    public void save(){
+        super.save();
+        try(Connection connect = DB.sql2o.open()){
+            String sql ="INSERT INTO sightings (location, rangerName, spotted, animalId) VALUES (:location, :rangerName, now(), animalId);";
+            this.id = (int) connect.createQuery(sql)
+                    .addParameter("location", this.location)
+                    .addParameter("rangerName", this.rangerName)
+                    .addParameter("animalId", this.animalId)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
+    public static List<Sightings> all(){
+        try(Connection connect= DB.sql2o.open()){
+            String sql = "SELECT * FROM sightings;";
+            return connect.createQuery(sql).executeAndFetch(Sightings.class);
+        }
     }
 }
