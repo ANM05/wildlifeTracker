@@ -21,7 +21,7 @@ public class Endangered extends Animals{
         this.age = age;
         endangered = true;
     }
-
+    public String getName(){return name;}
     public String getHealth(){
         return health;
     }
@@ -58,6 +58,15 @@ public class Endangered extends Animals{
                 throw new IndexOutOfBoundsException("Sorry, this animal cannot be found.");
             }
             return animal;
+        }
+        }
+        public void update(String name, String health){
+        try(Connection connect = DB.sql2o.open()){
+            String sql = "UPDATE animals SET (name, health) = (:name, :health) WHERE id = :id;";
+            connect.createQuery(sql)
+            .addParameter("name", name)
+                    .addParameter("health", health)
+                    .executeUpdate();
         }
         }
     }
