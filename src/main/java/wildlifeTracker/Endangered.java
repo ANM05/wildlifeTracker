@@ -31,6 +31,7 @@ public class Endangered extends Animals{
 
     @Override
     public void save(){
+        super.save();
         try(Connection connect= DB.sql2o.open()){
             String sql = "UPDATE animals SET health=:health, age=:age WHERE id=:id";
              connect.createQuery(sql, true)
@@ -46,4 +47,18 @@ public class Endangered extends Animals{
             return connect.createQuery(sql).executeAndFetch(Endangered.class);
         }
     }
-}
+    public static Endangered find(int id){
+        try(Connection connect = DB.sql2o.open()){
+            String sql = "SELECT * FROM animals WHERE id= :id;";
+            Endangered animal = connect.createQuery(sql)
+                    .addParameter("id", id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Endangered.class);
+            if (animal == null) {
+                throw new IndexOutOfBoundsException("Sorry, this animal cannot be found.");
+            }
+            return animal;
+        }
+        }
+    }
+
