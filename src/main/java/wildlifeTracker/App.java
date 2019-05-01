@@ -7,6 +7,7 @@ import java.util.HashMap;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import java.util.List;
 
 
 public class App {
@@ -65,6 +66,14 @@ public class App {
             model.put("nonendangered", NonEndangered.all());
             model.put("endangered", Endangered.all());
             model.put("template", "templates/animals.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        get("/sightings/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<Endangered> animals = Endangered.all();
+            model.put("animals", animals);
+            model.put("template", "templates/sightings-form.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
