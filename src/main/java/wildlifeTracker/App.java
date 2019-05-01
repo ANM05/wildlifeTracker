@@ -84,10 +84,15 @@ public class App {
             String rangername= request.queryParams("rangername");
             Sightings newSighting = new Sightings(location, rangername, animal.getId());
             newSighting.save();
-            model.put("animal", animal);
             model.put("template", "templates/sightings.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        get("/sightings", (request, response) ->{
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("sightings", Sightings.all());
+            model.put("template", "templates/sightings.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
     }
 }

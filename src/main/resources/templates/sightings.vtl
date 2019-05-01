@@ -1,3 +1,8 @@
 <div>
-
+    <h3>List of all sightings</h3>
+    <div class="list-group">
+        #foreach ($sighting in $sightings)
+        <a href="" class="list-group-item list-group-item-action list-group-item-light">$sighting.getLocation()</a>
+        #end
+    </div>
 </div>
