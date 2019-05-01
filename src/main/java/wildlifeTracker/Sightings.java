@@ -53,10 +53,17 @@ public class Sightings extends Animals{
                     this.getRangerName().equals(newSighting.getRangerName());
         }
     }
+
+    public static List<Sightings> all(){
+        String sql = "SELECT * FROM sightings;";
+        try(Connection connect= DB.sql2o.open()){
+            return connect.createQuery(sql).executeAndFetch(Sightings.class);
+        }
+    }
     @Override
     public void save(){
-       super.save();
-        try(Connection connect = DB.sql2o.open()){
+        // super.save();
+        try(Connection connect= DB.sql2o.open()){
             String sql ="INSERT INTO sightings (location, rangerName, spotted, animalId) VALUES (:location, :rangerName, now(), :animalId)";
             this.id = (int) connect.createQuery(sql, true)
                     .addParameter("location", this.location)
@@ -64,12 +71,6 @@ public class Sightings extends Animals{
                     .addParameter("animalId", this.animalId)
                     .executeUpdate()
                     .getKey();
-        }
-    }
-    public static List<Sightings> all(){
-        String sql = "SELECT * FROM sightings;";
-        try(Connection connect= DB.sql2o.open()){
-            return connect.createQuery(sql).executeAndFetch(Sightings.class);
         }
     }
 }

@@ -29,10 +29,14 @@ public class SightingsTest {
         assertEquals(1, testSighting.getAnimalId());
     }
     @Test
+    public void equals_returnsTrueIfSightingsObjectsAreTrue_true(){
+
+    }
+    @Test
     public void save_savesSightingsObjectsIntoDatabase(){
         Sightings testSighting = new Sightings("area 1", "Vick", 1);
         testSighting.save();
-        assertTrue(Sightings.all().get(0).equals(testSighting));
+        assertEquals(true, Sightings.all().get(0).equals(testSighting));
     }
     @Test
     public void all_returnsAllObjectsOfSightingsClass_true(){
