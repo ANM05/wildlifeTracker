@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col col-sm-6">
+     <h3>Non-Endangered Animals</h3>
+
+        #if($nonendangered.size() > 0)
+        <ul>
+            #foreach($notendangered_animal in $nonendangered)
+            <li><a href="">$notendangered_animal.getName()</a></li>
+            #end
+        </ul>
+        #else
+        <h5>No saved animals</h5>
+        #end
+
+    </div>
+
+    <div class="col col-sm-6">
+        <h3>Endangered Animals</h3>
+
+        #if($endangered.size() > 0)
+        <ul>
+            #foreach($endangered_animal in $endangered)
+            <li><a href=""> $endangered_animal.getName() </a></li>
+            <li><a href=""> $endangered_animal.getHealth() </a></li>
+            <li><a href=""> $endangered_animal.getAge() </a></li>
+            #end
+        </ul>
+        #else
+        <h3>No saved endangered animals</h3>
+        #end
+    </div>
+
+</div>
