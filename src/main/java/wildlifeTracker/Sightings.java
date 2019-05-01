@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.List;
 
-public class Sightings extends Animals{
+public class Sightings{
     private String location;
     private String rangerName;
     private Timestamp spotted;
@@ -60,9 +60,7 @@ public class Sightings extends Animals{
             return connect.createQuery(sql).executeAndFetch(Sightings.class);
         }
     }
-    @Override
     public void save(){
-        // super.save();
         try(Connection connect= DB.sql2o.open()){
             String sql ="INSERT INTO sightings (location, rangerName, spotted, animalId) VALUES (:location, :rangerName, now(), :animalId)";
             this.id = (int) connect.createQuery(sql, true)
@@ -71,6 +69,15 @@ public class Sightings extends Animals{
                     .addParameter("animalId", this.animalId)
                     .executeUpdate()
                     .getKey();
+        }
+    }
+    public static Sightings find(int id){
+        try(Connection connect= DB.sql2o.open()){
+            String sql ="SELECT * FROM sightings WHERE id=:id;";
+            Sightings sighting = connect.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Sightings.class);
+            return sighting;
         }
     }
 }
