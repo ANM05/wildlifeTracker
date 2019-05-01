@@ -6,12 +6,12 @@ Antony Ng'ang'a
 A java spark app for the Forest Service to conduct an environmental impact study and record number of animals listing whether they are endangered or not.
 
 #### Technologies and frameworks used
-* 1. java 11
-* 2. spark core 2.12
-* 3. Gradle 4.10
-* 4. Spark Template Velocity
-* 5. Junit 5
-* 6. Postgres database
+1. java 11
+2. spark core 2.12
+3. Gradle 4.10
+4. Spark Template Velocity
+5. Junit 5
+6. Postgres database
 #### Database setup.
 In PSQL:
 
