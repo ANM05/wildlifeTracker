@@ -20,10 +20,10 @@ height: 100%;
 }
 
 .text-container {
-  background: #31D839;
-  opacity: 0.6;
+  background: black;
+  opacity: 0.5;
   padding: 20px;
-  height: 80vh;
+  height: 87vh;
   width: 100%;
   position: relative;
 }
@@ -37,4 +37,24 @@ height: 100%;
   outline: none;
   height: 100%;
   position: absolute;
+}
+p.textarea{
+color: white;
+opacity: 1;
+}
+.index-right{
+color: white;
+}
+.mylist{
+color: white;
+}
+
+.ul{
+display:table;
+margin:0 auto;
+width: 80%;
+border-radius: 0:
+}
+.align{
+text-align: center;
 }
