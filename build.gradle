@@ -33,3 +33,5 @@ dependencies {
 
 // Define the main class for the application
 mainClassName = 'wildlifeTracker.App'
+applicationName = "wildlifeTracker"
+task stage(dependsOn: ['clean', 'installDist'])
