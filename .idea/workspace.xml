@@ -4,7 +4,7 @@
     <list default="true" id="154fef70-031b-427f-941c-30e26e6624bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/public/images/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/images/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sightings.vtl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sightings.vtl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -41,11 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="38" />
+            <state relative-caret-position="45">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings-form.vtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -77,11 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/public/images/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+            <state relative-caret-position="380">
+              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings.vtl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -115,13 +133,13 @@
         <option value="$PROJECT_DIR$/src/test/java/wildlifeTracker/SightingsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/wildlifeTracker/Sightings.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public/app.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sightings-form.vtl" />
         <option value="$PROJECT_DIR$/src/main/java/wildlifeTracker/App.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/sightings.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/animals.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sightings-form.vtl" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/sightings.vtl" />
         <option value="$PROJECT_DIR$/src/main/resources/public/images/app.css" />
       </list>
     </option>
@@ -377,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings-form.vtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wildlifeTracker/Endangered.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -401,13 +412,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings.vtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="130" selection-start-line="6" selection-start-column="130" selection-end-line="6" selection-end-column="130" />
         </state>
       </provider>
     </entry>
@@ -445,17 +449,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public/images/app.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/animal-form.vtl">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings-form.vtl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="38" />
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/sightings.vtl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public/images/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
         </state>
       </provider>
     </entry>
