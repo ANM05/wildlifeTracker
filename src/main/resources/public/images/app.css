@@ -53,8 +53,17 @@ color: white;
 display:table;
 margin:0 auto;
 width: 80%;
-border-radius: 0:
+border-radius: 0;
 }
 .align{
 text-align: center;
+}
+.form-left{
+display:table;
+margin:0 auto;
+width: 80%;
+border-radius: 0;
+background: white;
+
+height: 80vh;
 }
